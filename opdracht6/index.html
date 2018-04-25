@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="ajax.js"></script>
+    <title>bradley bmi</title>
+  </head>
+  <body>
+
+      <label>wat is uw lengte in cm
+         <input type="text" id="lengte_cm" value=""> </label>
+      <label>wat is uw gewicht in kg <input type="text" id="gewicht" value=""> </label>
+<button id="bereken">bereken u BMI</button>
+
+      <div id="resultaat">hier komt resultaat</div>
+      <script>
+          //bind lengte en gewicht en button
+         let  lengte = document.getElementById('lengte_cm');//bind
+         let  gewicht = document.getElementById('gewicht');//bind input text
+         let  btn = document.getElementById('bereken');
+         // eventlisteren click koppelen aan button => ajax(lengte.value,gewicht.value)
+         btn.addEventListener("click", function(){
+           lengte= parseInt(lengte.value);
+           gewicht= parseInt(gewicht.value);
+           ajax(gewicht, lengte);
+         });
+      </script>
+  </body>
+</html>
